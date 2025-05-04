@@ -21,6 +21,7 @@
     --white: #1a1a1a;
     --title: #eaeaea;
     --bg-all: #262626;
+    --shadow: rgba(255, 255, 255, 0.06);
 }
 
 [data-theme="light"] {
@@ -39,6 +40,7 @@
     --white: #fff;
     --title: #1a1a1a;
     --bg-all: #eaeaea;
+    --shadow: rgba(0, 0, 0, 0.06);
 }
 
 body {
@@ -54,13 +56,14 @@ header {
     top: 0;
     z-index: 3;
     width: 100%;
+    box-shadow: 0 4px 6px var(--shadow);
 }
 
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 40px;
+    padding: 15px 80px;
     background-color: var(--white);
 }
 
@@ -75,7 +78,7 @@ header {
     display: flex;
     overflow-x: auto;
     background-color: var(--white);
-    padding: 0 40px;
+    padding: 0 80px;
 }
 
 .menu-tab {
@@ -84,18 +87,15 @@ header {
     font-size: 14px;
     cursor: pointer;
     position: relative;
-}
-
-.menu-tab a {
     text-decoration: none;
     color: var(--bg-color);
 }
 
-.menu-tab a:hover {
+.menu-tab:hover {
     color: var(--green);
 }
 
-.menu-tab.active a {
+.menu-tab.active {
     color: var(--green);
     font-weight: 500;
 }
@@ -112,7 +112,7 @@ header {
 }
 
 .menu-add {
-    margin: 10px 30px;
+    margin: 10px 80px;
     padding: 5px 10px;
     justify-content: center;
     align-items: center;
@@ -129,11 +129,8 @@ header {
 }
 
 .logo img {
-    height: 28px;
-}
-
-.logo h1 {
-    color: var(--green);
+    height: 35px;
+    width: auto;
 }
 
 .search-container {
@@ -185,7 +182,7 @@ header {
     align-items: center;
 }
 
-.tema-icon:hover {
+.tema-icon i:hover {
     color: var(--bg-color);
 }
 
@@ -307,11 +304,11 @@ header {
     margin: 1px;
     gap: 20px;
     position: relative;
-    border: 1.5px var(--black) solid;
+    border: 2px var(--black) solid;
 }
 
 .menu-item:hover {
-    border: 1.5px var(--green) solid;
+    border: 2px var(--green) solid;
 }
 
 .item-image {
@@ -319,7 +316,6 @@ header {
     width: 120px;
     height: 120px;
     border-radius: 8px;
-    margin-bottom: 12px;
     display: flex;
     align-items: center;
     justify-content: center;

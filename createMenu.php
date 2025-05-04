@@ -1,7 +1,7 @@
 <?php
-require_once "Database.php";
-require_once "Type.php";
-require_once "Menu.php";
+require_once "models/Database.php";
+require_once "models/Type.php";
+require_once "models/Menu.php";
 
 // Inisialisasi koneksi database dan model
 $db = new Database();
@@ -35,7 +35,7 @@ $typesData = $typeManager->getAllTypes();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah Menu Baru - Starling</title>
+    <title>Tambah Menu Baru - Starbuck</title>
     <link rel="stylesheet" href="css/createMenu.css"> 
 </head>
 <body>
@@ -92,7 +92,7 @@ $typesData = $typeManager->getAllTypes();
         </form>
     </div>
 
-    <script src="script.js"></script>
-    <script src="theme.js"></script> 
+    <script src="js/script.js"></script>
+    <script src="js/theme.js"></script> 
 </body>
 </html>

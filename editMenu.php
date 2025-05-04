@@ -1,7 +1,7 @@
 <?php
-require_once "Database.php";
-require_once "Menu.php";
-require_once "Type.php";
+require_once "models/Database.php";
+require_once "models/Menu.php";
+require_once "models/Type.php";
 
 // Ambil ID menu dari URL
 $idMenu = $_GET['idmenu'] ?? null;
@@ -86,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Menu - Starling</title>
+    <title>Edit Menu - Starbuck</title>
     <link rel="stylesheet" href="css/createMenu.css">
 </head>
 <body>
@@ -157,7 +157,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </form>
     </div>
 
-    <script src="script.js"></script>
-    <script src="theme.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/theme.js"></script>
 </body>
 </html>

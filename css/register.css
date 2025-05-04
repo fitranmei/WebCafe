@@ -109,6 +109,10 @@ body {
     margin-top: 5px;
 }
 
+.error-box li {
+    color: red;
+}
+
 .submit-button {
     padding: 12px;
     background-color: #00b14f;

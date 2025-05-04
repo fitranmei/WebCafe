@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once "../User.php";
+require_once "../models/User.php";
 
 $errors = [];
 
@@ -15,6 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $_SESSION['is_logged_in'] = true;
         $_SESSION['user_name'] = $loggedUser['name']; 
         $_SESSION['user_id'] = $loggedUser['id']; 
+        $_SESSION['role'] = $loggedUser['role']; 
+
 
         header("Location: ../index.php"); 
         exit;

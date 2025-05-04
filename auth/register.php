@@ -1,5 +1,5 @@
 <?php
-require_once "../User.php";
+require_once "../models/User.php";
 
 $errors = [];
 $success = false;
@@ -29,6 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (empty($errors)) {
         if ($user->createUser($fullName, $username, $email, $password, $role, $profilePicture)) {
             $success = true;
+            header("Location: ../index.php");
         } else {
             $errors[] = "Gagal menyimpan data ke database.";
         }
@@ -64,10 +65,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                 <li><?= htmlspecialchars($err) ?></li>
                             <?php endforeach; ?>
                         </ul>
-                    </div>
-                <?php elseif ($success): ?>
-                    <div class="success-box">
-                        Akun berhasil dibuat. <a href="login.php">Login sekarang</a>.
                     </div>
                 <?php endif; ?>
 
