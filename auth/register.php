@@ -53,6 +53,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         <div class="right-section">
             <div class="card">
+                <div class="tema-icon">
+                    <i class="fa-solid fa-sun"></i> 
+                </div>
                 <h2 class="title">Create Account</h2>
                 <p class="subtitle">
                     Have an account? <a href="login.php">Login here</a>
@@ -102,6 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </div>
     </div>
 
-    <script src="../script.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/theme.js"></script>
 </body>
 </html>

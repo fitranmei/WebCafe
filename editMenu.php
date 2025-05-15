@@ -3,16 +3,13 @@ require_once "models/Database.php";
 require_once "models/Menu.php";
 require_once "models/Type.php";
 
-// Ambil ID menu dari URL
 $idMenu = $_GET['idmenu'] ?? null;
 $error = $_GET['error'] ?? '';
 $message = $_GET['message'] ?? '';
 
-// Buat objek Menu dan Type
 $menu = new Menu();
 $typeManager = new Type();
 
-// Ambil data menu berdasarkan ID
 $menuData = null;
 if (!empty($idMenu)) {
     $menuData = $menu->getMenuById($idMenu);
@@ -21,12 +18,10 @@ if (!empty($idMenu)) {
     }
 }
 
-// Ambil semua tipe menu
 $types = $typeManager->getAllTypes();
 
 // Proses jika form disubmit
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Tangkap data dari form
     $id_menu = $_POST['id_menu'];
     $name = $_POST['name'];
     $type = $_POST['type'];
@@ -34,7 +29,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $description = $_POST['description'];
     $current_image = $_POST['current_image'];
 
-    // Proses upload gambar
     $image_name = $current_image; 
     if (!empty($_FILES['image']['name'])) {
         $target_dir = "images/menu/";
@@ -64,7 +58,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    // Jika tidak ada error, update menu
     if (empty($error)) {
         try {
             $result = $menu->updateMenu($id_menu, $name, $type, $price, $description, $image_name);

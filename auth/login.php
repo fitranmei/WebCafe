@@ -39,9 +39,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <div class="container">
         <div class="left-section">
         </div>
-
+        
         <div class="right-section">
             <div class="card">
+                <div class="tema-icon">
+                    <i class="fa-solid fa-sun"></i> 
+                </div>
                 <h2 class="title">Login Account</h2>
                 <p class="subtitle">Belum punya akun? <a href="register.php">Register di sini</a></p>
 
@@ -80,6 +83,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     </div>
 
-    <script src="../script.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/theme.js"></script>
 </body>
 </html>

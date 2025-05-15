@@ -1,16 +1,66 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #fff;
+    background: var(--bg-all);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     background-image: url('../images/general/wallpaper.jpg');
-    background-size: cover;  /* Menutupi seluruh area */
-    background-position: center center;  /* Menjaga posisi gambar di tengah */
-    background-attachment: fixed;  /* Agar gambar tetap saat scroll */
+    background-size: cover;  
+    background-position: center center;  
+    background-attachment: fixed;  
     background-repeat: no-repeat;
+    color: var(--textcolor);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+:root {
+    --dark-green: #1c8864;
+    --green: #00b14f;
+    --light-green: #b2c864;
+    --brown: #cf8944;
+    --darkbrown: #39250d;
+    --textcolor: #262626;
+    --bg-color: #eaeaea;
+    --black: #1a1a1a;
+    --gray: #74747e;
+    --light-gray: #b7b7c6;
+    --red: #c22323;
+    --warning: #e84545;
+    --white: #ffffff;
+    --card-bg: #ffffff;
+    --border-color: #eee;
+    --input-border: #ccc;
+    --input-bg: #ffffff;
+    --input-text: #333333;
+    --bg-all: #ffffff;
+    --title-color: #00b14f;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+    --dark-green: #1f9970;  
+    --green: #00b14f;
+    --light-green: #b2c864;
+    --brown: #cf8944;
+    --darkbrown: #2a1a12; 
+    --textcolor: #eaeaea;  
+    --bg-color: #262626;   
+    --black: #eaeaea;
+    --gray: #e0e0e0;  
+    --light-gray: #b7b7c6;
+    --red: #d83636;
+    --warning: #f47777; 
+    --white: #262626;
+    --card-bg: #333333;
+    --border-color: #444;
+    --input-border: #555;
+    --input-bg: #444;
+    --input-text: #eaeaea;
+    --bg-all: #1a1a1a;
+    --title-color: #00b14f;
+    --shadow: rgba(255, 255, 255, 0.06);
 }
 
 .container {
@@ -22,7 +72,6 @@ body {
 }
 
 .left-section, .right-section {
-    
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -44,14 +93,29 @@ body {
     width: 100%;
     max-width: 400px;
     padding: 40px;
-    border: 1px solid #eee;
+    border: 1px solid var(--border-color);
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    background-color: #fff;
+    box-shadow: 0 4px 12px var(--shadow);
+    background-color: var(--card-bg);
+}
+
+.tema-icon {
+    margin-right: 20px;
+    font-size: 20px;
+    color: var(--light-gray);
+    padding: 2px 8px;
+    border-radius: 2px;
+    font-size: 24px;
+    justify-content: center;
+    align-items: center;
+}
+
+.tema-icon i:hover {
+    color: var(--black);
 }
 
 .title {
-    color: #00b14f;
+    color: var(--title-color);
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 10px;
@@ -60,12 +124,17 @@ body {
 .subtitle {
     font-size: 14px;
     margin-bottom: 20px;
+    color: var(--textcolor);
 }
 
 .subtitle a {
-    color: #167354;
+    color: var(--green);
     text-decoration: none;
     font-weight: bold;
+}
+
+.subtitle a:hover {
+    color: var(--dark-green);
 }
 
 .form {
@@ -82,15 +151,18 @@ body {
 
 .form-group input {
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--input-border);
     border-radius: 6px;
     font-size: 14px;
+    background-color: var(--input-bg);
+    color: var(--input-text);
 }
 
 .form-group label {
     margin-bottom: 6px;
     font-size: 14px;
     font-weight: 500;
+    color: var(--textcolor);
 }
 
 .password-field .toggle {
@@ -101,21 +173,29 @@ body {
     border: none;
     cursor: pointer;
     font-size: 16px;
+    color: var(--gray);
 }
 
 .error {
-    color: red;
+    color: var(--red);
     font-size: 12px;
     margin-top: 5px;
 }
 
+.error-box {
+    background-color: rgba(220, 53, 69, 0.1);
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
 .error-box li {
-    color: red;
+    color: var(--red);
 }
 
 .submit-button {
     padding: 12px;
-    background-color: #00b14f;
+    background-color: var(--green);
     color: white;
     border: none;
     border-radius: 6px;
@@ -123,7 +203,11 @@ body {
     cursor: pointer;
 }
 
+.submit-button:hover {
+    background-color: var(--dark-green);
+}
+
 .submit-button:disabled {
-    background-color: #ccc;
+    background-color: var(--gray);
     cursor: not-allowed;
 }

@@ -26,7 +26,7 @@ function getMenu($conn, $type = 'all') {
     }
 
     $result = $conn->query($query);
-    $menu = [];
+    $menu = []; 
     while ($row = $result->fetch_assoc()) {
         $menu[] = $row;
     }
@@ -77,7 +77,7 @@ function sanitizeOutput($text) {
             </div>
             <div class="user-actions">
                 <div class="tema-icon">
-                    <i class="fa-solid fa-moon"></i>
+                    <i class="fa-solid fa-sun"></i>
                 </div>
                 <?php if ($isLoggedIn): ?>
                     <a href="auth/logout.php" class="login-btn">Logout</a>
